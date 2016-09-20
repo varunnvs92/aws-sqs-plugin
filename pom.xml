@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project
-        xmlns="http://maven.apache.org/POM/4.0.0"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -10,13 +7,13 @@
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>plugin</artifactId>
         <version>2.3</version>
-        <relativePath/>
+        <relativePath />
     </parent>
 
     <groupId>io.relution.jenkins</groupId>
     <url>https://wiki.jenkins-ci.org/display/JENKINS/AWS+SQS+Plugin</url>
     <artifactId>aws-sqs</artifactId>
-    <version>1.001-SNAPSHOT</version>
+    <version>1.001</version>
     <packaging>hpi</packaging>
 
     <name>AWS SQS Build Trigger Plugin</name>
@@ -30,7 +27,8 @@
         <developerConnection>scm:git:ssh://git@github.com/jenkinsci/${project.artifactId}-plugin.git
         </developerConnection>
         <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
-    </scm>
+      <tag>aws-sqs-1.001</tag>
+  </scm>
 
     <properties>
         <jenkins.version>1.651.2</jenkins.version>
@@ -177,7 +175,7 @@
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <ignore></ignore>
+                                                <ignore />
                                             </action>
                                         </pluginExecution>
                                     </pluginExecutions>
