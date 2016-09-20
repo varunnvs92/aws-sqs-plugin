@@ -13,7 +13,7 @@
     <groupId>io.relution.jenkins</groupId>
     <url>https://wiki.jenkins-ci.org/display/JENKINS/AWS+SQS+Plugin</url>
     <artifactId>aws-sqs</artifactId>
-    <version>1.002-SNAPSHOT</version>
+    <version>1.002</version>
     <packaging>hpi</packaging>
 
     <name>AWS SQS Build Trigger Plugin</name>
@@ -27,7 +27,7 @@
         <developerConnection>scm:git:ssh://git@github.com/jenkinsci/${project.artifactId}-plugin.git
         </developerConnection>
         <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
-      <tag>HEAD</tag>
+      <tag>aws-sqs-1.002</tag>
   </scm>
 
     <properties>
