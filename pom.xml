@@ -12,7 +12,7 @@
 
     <groupId>io.relution.jenkins</groupId>
     <url>https://wiki.jenkins-ci.org/display/JENKINS/AWS+SQS+Plugin</url>
-    <artifactId>aws-sqs</artifactId>
+    <artifactId>aws-sqs-plugin</artifactId>
     <version>1.004-SNAPSHOT</version>
     <packaging>hpi</packaging>
 
