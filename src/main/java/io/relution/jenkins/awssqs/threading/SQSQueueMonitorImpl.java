@@ -177,7 +177,7 @@ public class SQSQueueMonitorImpl implements SQSQueueMonitor {
         }
 
         if (this.notifyListeners(messages)) {
-            this.channel.deleteMessages(messages);
+           // this.channel.deleteMessages(messages);
         }
     }
 

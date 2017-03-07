@@ -201,6 +201,7 @@ public class SQSTrigger extends Trigger<AbstractProject<?, ?>> implements io.rel
         jobParams.put("sqs_messageId", message.getMessageId());
         jobParams.put("sqs_receiptHandle", message.getReceiptHandle());
         jobParams.put("sqs_bodyMD5", message.getMD5OfBody());
+        jobParams.put("sqs_queueUrl", DescriptorImpl.get().getSqsQueues().get(0).getUrl());
         startJob(jobParams);
 
 //        final MessageParser parser = this.messageParserFactory.createParser(message);
