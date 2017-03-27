@@ -187,6 +187,16 @@ public class SQSTrigger extends Trigger<AbstractProject<?, ?>> implements io.rel
         return this.executor;
     }
 
+    public String getCurrentQueueUrl() {
+        TriggerDescriptor descriptor = this.getDescriptor();
+        if (descriptor instanceof DescriptorImpl) {
+            DescriptorImpl impl = (DescriptorImpl) descriptor;
+            SQSQueue queue = impl.getSqsQueue(getQueueUuid());
+            return queue.getUrl();
+        }
+        throw new RuntimeException("TriggerDescriptor should be instance of DescriptorImpl");
+    }
+
     private void handleMessage(final Message message) {
         Log.info("Message received...");
         Map<String, String> jobParams = new HashMap<>();
@@ -201,7 +211,7 @@ public class SQSTrigger extends Trigger<AbstractProject<?, ?>> implements io.rel
         jobParams.put("sqs_messageId", message.getMessageId());
         jobParams.put("sqs_receiptHandle", message.getReceiptHandle());
         jobParams.put("sqs_bodyMD5", message.getMD5OfBody());
-        jobParams.put("sqs_queueUrl", DescriptorImpl.get().getSqsQueues().get(0).getUrl());
+        jobParams.put("sqs_queueUrl", getCurrentQueueUrl());
         startJob(jobParams);
 
 //        final MessageParser parser = this.messageParserFactory.createParser(message);
